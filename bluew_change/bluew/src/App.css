@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+.navItem{
+  @apply hover:text-navItemsHover-0 transition-all ease-in hover:underline
+}
+
+
+
+.show{
+  @apply translate-x-0 
+}
+
+.hero{
+  @apply relative bg-[#005C8B] w-[100vw] h-[100vh];
+}
+
+.navItems{
+  @apply absolute right-16 top-[24%]  font-['Poppins'] text-xl sm:hidden
+}
+
+.hamMenu{
+  @apply  z-20 absolute top-6 right-5 hidden sm:block
+}
+
+.subMenu{
+  @apply md:hidden 2xl:hidden xl:hidden lg:hidden absolute right-0 top-0 h-[100vh] bg-[#005C8B] w-[100vw] hidden justify-center items-center z-30
+}
+
+.main-title.show{
+  @apply opacity-100;
+}
