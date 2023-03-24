@@ -35,6 +35,7 @@ const MapContainer = () => {
                 </div>}
             {!isLoaded && <h1 className=' text-4xl font-bold mt-72 text-red-800'>An Error Occured. Please Check Your Internet Connection</h1> }
             { isLoaded && latitude && longitude && <Map /> }
+            {!userLocationFound && <h1  className=' text-red-700'>We can't access your location. Please grant your browser permission to do so</h1>}
 
             <div className='searchLocationContainer w-[30vw] h-[100vh] bg-[#334B49] sm:hidden md:hidden flex flex-col pl-6 pt-12 gap-y-12'>
                 <div className="userCountry ">
