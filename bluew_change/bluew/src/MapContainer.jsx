@@ -28,7 +28,7 @@ const MapContainer = () => {
         </GoogleMap>
     }
     return ( 
-        <div className="mapContainer flex">
+        <div className="mapContainer flex relative">
             {!isLoaded &&  //tailwind loading icon for when map hasn't loaded yet
                 <div className="">
                     <div className="spinner border-t-4 border-b-4 border-gray-500 rounded-full w-12 h-12 animate-spin mt-10"></div>
@@ -37,7 +37,7 @@ const MapContainer = () => {
             { isLoaded && latitude && longitude && <Map /> }
             {!userLocationFound && <h1  className=' text-red-700'>We can't access your location. Please grant your browser permission to do so</h1>}
 
-            <div className='searchLocationContainer w-[30vw] h-[100vh] bg-[#334B49] sm:hidden md:hidden flex flex-col pl-6 pt-12 gap-y-12'>
+            <div className=' absolute right-0 searchLocationContainer w-[30vw] h-[100vh] bg-[#334B49] sm:hidden md:hidden flex flex-col pl-6 pt-12 gap-y-12'>
                 <div className="userCountry ">
                     <p className='text-white font-bold text-2xl mb-4'>Country</p>
                     <select className="userInput w-56 ml-4 px-3 py-1 h-9 bg-white rounded-lg" contentEditable>
