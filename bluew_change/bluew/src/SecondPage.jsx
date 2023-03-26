@@ -8,7 +8,7 @@ const SecondPage = ({smallAboutDetails}) => {
 
                 </div>
             </div>
-            <div className="cards flex gap-14 md:gap-8 sm:flex-col sm:gap-6 hover:cursor-pointer overflow-x-auto">
+            <div className="cards flex gap-14 md:gap-8 sm:flex-col sm:gap-6 hover:cursor-pointer md:overflow-x-auto">
                 {smallAboutDetails.map((item) => (
                     <div className="card flex flex-col mt-20 ml-20 sm:ml-8 hover:shadow-cardBoxShadow transition-all duration-300 h-fit" key={item.id}>
                         <img src={item.image} alt=""  className=' w-72 h-52 rounded-tl-md rounded-tr-md'/>
