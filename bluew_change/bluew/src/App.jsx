@@ -8,6 +8,7 @@ import fountain from './assets/fount2.jpg';
 import restaurant from './assets/restaurant.jpg'
 import MapContainer from './MapContainer';
 
+
 function App() {
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [showHeroImg,setShowHeroImg] = useState(true);
@@ -30,8 +31,11 @@ function App() {
     }
   },[])
   return (
-    <div className="App overflow-x-hidden">
-    
+    <>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet" />
+      <div className="App overflow-x-hidden">
+      
       <Navbar subMenuToggle={subMenuToggle} showSubMenu={showSubMenu} />  
       <Hero showObserverElements={showObserverElements} setShowObserverElements={setShowObserverElements} />
       <SecondPage smallAboutDetails={smallAboutDetails} />
@@ -39,6 +43,7 @@ function App() {
       
     
     </div>
+    </>
   )
 }
 

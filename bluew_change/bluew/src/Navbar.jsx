@@ -1,8 +1,8 @@
 const Navbar = ({subMenuToggle,showSubMenu}) => {
     return ( 
         <>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-            <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet" />
+            {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+            <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet" /> */}
 
             {!showSubMenu && <div className="navbar z-20 absolute top-5 left-5 w-[97%] sm:w-[95%] flex">
                 

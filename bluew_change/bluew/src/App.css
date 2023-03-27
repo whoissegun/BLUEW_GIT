@@ -31,3 +31,7 @@
 .main-title.show{
   @apply opacity-100;
 }
+
+.searchLocationContainerWidget.show{
+  @apply md:h-[85vh] sm:h-[65vh];
+}
