@@ -7,6 +7,7 @@ import boyDrink from './assets/drink-1.jpg';
 import fountain from './assets/fount2.jpg';
 import restaurant from './assets/restaurant.jpg'
 import MapContainer from './MapContainer';
+import UserAddLocation from './UserAddLocation';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
       <Hero showObserverElements={showObserverElements} setShowObserverElements={setShowObserverElements} />
       <SecondPage smallAboutDetails={smallAboutDetails} />
       <MapContainer />
+      <UserAddLocation />
       
     
     </div>

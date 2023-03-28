@@ -35,3 +35,13 @@
 .searchLocationContainerWidget.show{
   @apply md:h-[85vh] sm:h-[65vh];
 }
+
+.information{
+  @apply px-3 py-3 bg-[#eef1f5] gap-4  flex flex-col w-[80%] sm:w-[70%] 
+}
+
+
+
+.information input{
+  @apply ml-5 px-2 h-7 sm:ml-3
+}

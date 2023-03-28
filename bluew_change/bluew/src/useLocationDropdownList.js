@@ -1,10 +1,12 @@
 import { useState,useEffect } from "react";
 
-const useSearchUserLocation  = () => {
+const useLocationDropDownList  = () => {
     const [responseData,setResponseData] = useState([]);
-    
     const [stateList,setStates] = useState([]);
     const [citiesList,setCities] = useState([]);
+    const [latitude,setLatitude] = useState(null);
+    const [longitude,setLongitude] = useState(null);
+    const [userLocationFound,setUserLocationFound] = useState(false);
 
     useEffect(()=> {
         fetch('https://pkgstore.datahub.io/core/world-cities/world-cities_json/data/5b3dd46ad10990bca47b04b4739a02ba/world-cities_json.json')
@@ -29,12 +31,27 @@ const useSearchUserLocation  = () => {
         let selectedStateCities = responseData.filter(item => {return e.target.value === item.subcountry}); //this returns an array of objects where the subcountry of each item is the state/province selected by the user
         let cities = [... new Set(selectedStateCities.map(item => item.name))]; // subcountry is the property in the response data that represents states/provinces . This returns a list of states
 
-        setCities(cities.sort());
-        
-        
+        setCities(cities.sort());  
     }
 
-    return { countries, handleCountry, stateList,citiesList,handleState };
+    const options = {
+        timeout:15000, //maximum time for program to wait for response
+        enableHighAccuracy: true, //making sure its a precise location
+    }
+
+    const navigatorFunction = () => {
+        navigator.geolocation.getCurrentPosition(  
+            (position) => { //success callback
+                setLatitude(position.coords.latitude);
+                setLongitude(position.coords.longitude);
+                setUserLocationFound(true);
+                
+                
+            },null,options //i dont think i need an error caallback
+        )
+    }
+
+    return { countries, handleCountry, stateList,citiesList,handleState, navigatorFunction,latitude,longitude,userLocationFound };
 }
  
-export default useSearchUserLocation;
+export default useLocationDropDownList;
