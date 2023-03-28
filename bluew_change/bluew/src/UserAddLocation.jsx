@@ -64,7 +64,7 @@ const UserAddLocation = () => {
                 </div>
             </div>
 
-            <div className="contact-info  h-[68vh] sm:h-[50vh] mt-5 information">
+            <div className="contact-info  h-[68vh] sm:h-[52vh] mt-5 information">
                 <div className="contact-name flex flex-col gap-3">
                     <label htmlFor="contactName" className="font-bold text-lg">Contact Name</label>
                     <input type="text" id="contactName" className="w-[91%]" placeholder="Contact Name" />
