@@ -21,14 +21,17 @@ const MapContainer = () => {
     return ( 
         <div className="mapContainer flex relative">
             {!isLoaded &&  //tailwind loading icon for when map hasn't loaded yet
-                <div className="">
+                <div>
                     <div className="spinner border-t-4 border-b-4 border-gray-500 rounded-full w-12 h-12 animate-spin mt-10"></div>
                 </div>}
-            {!isLoaded && <h1 className=' text-4xl font-bold mt-72 text-red-800'>An Error Occured. Please Check Your Internet Connection</h1> }
+            {!isLoaded && 
+                <div className="emptyCountainer w-full h-100vh">
+                    <h1 className=' text-4xl font-bold mt-72 text-red-800'>An Unexpected Error Occured. Please Check Your Internet Connection Or Grant Us Permission To Access Your Location</h1> 
+                </div>}
             { isLoaded && latitude && longitude && <Map zoom={17} center={center}/> }
-            {!userLocationFound && <h1  className=' text-red-700'>We can't access your location. Please grant your browser permission to do so</h1>}
+           
 
-            <div className={`searchLocationContainerWidget xl:hidden  2xl:hidden bg-[#334B49] w-full absolute bottom-0 ${searchLocationContainerWidgetOpen? 'show' : 'h-14'} overflow-hidden rounded-t-lg px-4 py-2 transition-all duration-500`}>
+            { isLoaded && latitude && longitude && <div className={`searchLocationContainerWidget xl:hidden  2xl:hidden bg-[#334B49] w-full absolute bottom-0 ${searchLocationContainerWidgetOpen? 'show' : 'h-16'} overflow-hidden rounded-t-lg px-4 py-2 transition-all duration-500`}>
 
                 <div className="header md:mb-3 sm:mb-5 hover:cursor-pointer" onClick={() => toggleWidget()}>
                     <i className="fa-sharp fa-solid fa-circle-chevron-down text-white fa-2x"></i>
@@ -68,9 +71,9 @@ const MapContainer = () => {
                         <div className="addressInput w-56 ml-4 px-3 py-1 h-9 bg-white rounded-lg" contentEditable></div>
                     </div>
                 </div>
-            </div>
+            </div>}
 
-            <div className=' absolute right-0 searchLocationContainer w-[30vw] h-[100vh] bg-[#334B49] sm:hidden md:hidden lg:hidden flex flex-col pl-6 pt-12 gap-y-12'>
+            { isLoaded && latitude && longitude && <div className=' absolute right-0 searchLocationContainer w-[30vw] h-[100vh] bg-[#334B49] sm:hidden md:hidden lg:hidden flex flex-col pl-6 pt-12 gap-y-12'>
                 <div className="userCountry ">
                     <p className='text-white font-bold text-2xl mb-4'>Country</p>
                     <select className="userInput w-56 ml-4 px-3 py-1 h-9 bg-white rounded-lg" onChange={(e) => handleCountry(e)}>
@@ -102,7 +105,7 @@ const MapContainer = () => {
                     <p className='text-white font-bold text-2xl mb-4'>Address</p>
                     <div className="addressInput w-56 ml-4 px-3 py-1 h-9 bg-white rounded-lg" contentEditable></div>
                 </div>
-            </div>
+            </div>}
 
             
 

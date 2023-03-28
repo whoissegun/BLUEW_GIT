@@ -104,7 +104,7 @@ const UserAddLocation = () => {
                 </div>
             </div>
 
-            <button type="submit" className='w-[80%] sm:w-[70%]  bg-sky-600 mt-10 text-white font-semibold p-4 rounded-md text-lg'>Submit</button>
+            <button type="submit" className='w-[80%]   bg-sky-600 mt-10 text-white font-semibold p-4 rounded-md text-lg'>Submit</button>
         </form>
      );
 }

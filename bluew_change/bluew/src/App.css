@@ -37,7 +37,7 @@
 }
 
 .information{
-  @apply px-3 py-3 bg-[#eef1f5] gap-4  flex flex-col w-[80%] sm:w-[70%] 
+  @apply px-3 py-3 bg-[#eef1f5] gap-4  flex flex-col w-[80%] 
 }
 
 
