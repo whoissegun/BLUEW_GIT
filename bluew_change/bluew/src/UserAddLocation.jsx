@@ -5,7 +5,7 @@ import { useState } from 'react';
 const UserAddLocation = () => {
     
     const [value,setValue] = useState();
-    const { countries =[], handleCountry, stateList,citiesList,handleState } = useLocationDropdownList();
+    const { countries =[], handleCountry, stateList,citiesList,handleState,errorOccurred } = useLocationDropdownList();
     const [selectedWaterTypeOption, setSelectedWaterTypeOption] = useState('');
 
     const handleOptionChange = (event) => {
@@ -20,7 +20,7 @@ const UserAddLocation = () => {
     ]
     
     return ( 
-        <form className=" userAddLocation relative w-full h-[180vh] sm:h-[150vh] py-6 flex flex-col items-center" method="POST">
+        <form className={` userAddLocation relative w-full h-[180vh] sm:h-[150vh] ${errorOccurred?'py-0':'py-6'} flex flex-col items-center`} method="POST">
             <div className="header sm:w-[90%] sm:ml-3 md:w-[78%] lg:w-[78%] md:ml-7  ">
                 <h1 className=" font-['Poppins'] text-4xl  ">Add water bottle refill locations to this map - <span className=" text-sky-600"> it's free! </span></h1>
             </div>

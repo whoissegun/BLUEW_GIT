@@ -24,9 +24,11 @@ const MapContainer = () => {
                 <div>
                     <div className="spinner border-t-4 border-b-4 border-gray-500 rounded-full w-12 h-12 animate-spin mt-10"></div>
                 </div>}
-            {!isLoaded || errorOccurred &&
-                <div className="emptyCountainer w-full h-100vh">
-                    <h1 className=' text-4xl font-bold mt-72 text-red-800'>An Unexpected Error Occured. Please Check Your Internet Connection Or Grant Us Permission To Access Your Location</h1> 
+            {!isLoaded || errorOccurred && //show the h1 tag if there is a connection error or user blocks location
+                <div className="emptyContainer w-full h-fit">
+                    <div className="error-text w-[80%] mx-auto relative bottom-48 ">
+                        <h1 className=' text-4xl font-bold mt-72 text-red-800 underline '>An Unexpected Error Occured. Please Check Your Internet Connection Or Grant Us Permission To Access Your Location In Order To Use Map</h1> 
+                    </div>
                 </div>}
             { isLoaded && latitude && longitude && <Map zoom={17} center={center}/> }
            
