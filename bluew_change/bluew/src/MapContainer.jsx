@@ -24,7 +24,7 @@ const MapContainer = () => {
                 <div>
                     <div className="spinner border-t-4 border-b-4 border-gray-500 rounded-full w-12 h-12 animate-spin mt-10"></div>
                 </div>}
-            {!isLoaded && 
+            {!isLoaded && userLocationFound &&
                 <div className="emptyCountainer w-full h-100vh">
                     <h1 className=' text-4xl font-bold mt-72 text-red-800'>An Unexpected Error Occured. Please Check Your Internet Connection Or Grant Us Permission To Access Your Location</h1> 
                 </div>}
