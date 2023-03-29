@@ -7,6 +7,7 @@ const useLocationDropDownList  = () => {
     const [latitude,setLatitude] = useState(null);
     const [longitude,setLongitude] = useState(null);
     const [userLocationFound,setUserLocationFound] = useState(false);
+    const [errorOccurred, setErrorOccurred] = useState(false);
 
     useEffect(()=> {
         fetch('https://pkgstore.datahub.io/core/world-cities/world-cities_json/data/5b3dd46ad10990bca47b04b4739a02ba/world-cities_json.json')
@@ -47,11 +48,12 @@ const useLocationDropDownList  = () => {
                 setUserLocationFound(true);
                 
                 
-            },null,options //i dont think i need an error caallback
+            }, () => {setErrorOccurred(true)}
+            ,options 
         )
     }
 
-    return { countries, handleCountry, stateList,citiesList,handleState, navigatorFunction,latitude,longitude,userLocationFound };
+    return { countries, handleCountry, stateList,citiesList,handleState, navigatorFunction,latitude,longitude,userLocationFound,errorOccurred };
 }
  
 export default useLocationDropDownList;
