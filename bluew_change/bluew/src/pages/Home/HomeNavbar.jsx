@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HomeNavbar = ({subMenuToggle,showSubMenu}) => {
     return ( 
         <>
@@ -12,7 +14,7 @@ const HomeNavbar = ({subMenuToggle,showSubMenu}) => {
                     <ul className="flex text-white gap-9">
                         <li><a href="#" className="navItem">About Us</a></li>
                         <li><a href="#" className="navItem">Our Partners</a></li>
-                        <li><a href="#" className="navItem">Locations</a></li>
+                        <li><Link to="/generate-proposal">Get A Proposal</Link></li>
                     </ul>
                 </div>    
             </div>}
@@ -32,7 +34,7 @@ const HomeNavbar = ({subMenuToggle,showSubMenu}) => {
                 <ul className="flex flex-col gap-9 text-white text-2xl">
                     <li><a href="#" className="navItem">About Us</a></li>
                     <li><a href="#" className="navItem">Our Partners</a></li>
-                    <li><a href="#" className="navItem">Locations</a></li>
+                    <li><Link to="/generate-proposal">Get A Proposal</Link></li>
                 </ul>   
             </div>}
         </>

@@ -12,7 +12,7 @@ const Navbar = ({subMenuToggle,showSubMenu}) => {
                     <ul className="flex text-black gap-9 font-semibold font-['Poppins']">
                         <li><a href="#" className="navItem">About Us</a></li>
                         <li><a href="#" className="navItem">Our Partners</a></li>
-                        <li><a href="#" className="navItem">Locations</a></li>
+                        <li><Link to="/generate-proposal">Get A Proposal</Link></li>
                     </ul>
                 </div>    
             </div>}
@@ -32,7 +32,7 @@ const Navbar = ({subMenuToggle,showSubMenu}) => {
                 <ul className="flex flex-col gap-9 text-white text-2xl">
                     <li><a href="#" className="navItem">About Us</a></li>
                     <li><a href="#" className="navItem">Our Partners</a></li>
-                    <li><a href="#" className="navItem">Locations</a></li>
+                    <li><Link to="/generate-proposal">Get A Proposal</Link></li>
                 </ul>   
             </div>}
         </>
