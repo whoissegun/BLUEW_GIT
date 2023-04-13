@@ -16,12 +16,20 @@
   @apply relative bg-[#005C8B] w-[100vw] h-[100vh];
 }
 
-.navItems{
+.navItemsHome{
   @apply absolute right-16 top-[24%]  font-['Poppins'] text-xl sm:hidden
 }
 
-.hamMenu{
+.navItems{
+  @apply sm:hidden
+}
+
+.hamMenuHome{
   @apply  z-20 absolute top-6 right-5 hidden sm:block
+}
+
+.hamMenu{
+  @apply  absolute top-4 right-5 hidden sm:block
 }
 
 .subMenu{
@@ -44,4 +52,9 @@
 
 .information input{
   @apply ml-5 px-2 h-7 sm:ml-3
+}
+
+
+.phoneNumber-input .PhoneInputInput{
+  @apply bg-gray-200  rounded-sm px-3
 }

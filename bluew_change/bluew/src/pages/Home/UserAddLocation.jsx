@@ -1,4 +1,4 @@
-import useLocationDropdownList from './useLocationDropdownList';
+import useLocationDropdownList from './hooks/useLocationDropdownList';
 import PhoneInput, {formatPhoneNumberIntl,isValidPhoneNumber,isPossiblePhoneNumber} from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { useState } from 'react';

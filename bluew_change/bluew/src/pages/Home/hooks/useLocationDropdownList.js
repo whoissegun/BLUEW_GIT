@@ -6,7 +6,7 @@ const useLocationDropDownList  = () => {
     const [citiesList,setCities] = useState([]);
     const [latitude,setLatitude] = useState(null);
     const [longitude,setLongitude] = useState(null);
-    const [userLocationFound,setUserLocationFound] = useState(false);
+    
     const [errorOccurred, setErrorOccurred] = useState(false);
 
     useEffect(()=> {
@@ -16,6 +16,7 @@ const useLocationDropDownList  = () => {
             .catch(err => console.error(err));
     },[])
 
+   
     const countries = [... new Set(responseData.map(item => item.country))]; //keeping all countries within an array. If you look at the responseData, there are actually duplicates of countries,so we need to remove the duplicates by converting it to a set and destructuring to an array
     countries.sort(); //sorting the countries array
 
@@ -45,15 +46,13 @@ const useLocationDropDownList  = () => {
             (position) => { //success callback
                 setLatitude(position.coords.latitude);
                 setLongitude(position.coords.longitude);
-                setUserLocationFound(true);
                 
-                
-            }, () => {setErrorOccurred(true)}
+            }, () => {setErrorOccurred(true)} //error callback
             ,options 
         )
     }
-
-    return { countries, handleCountry, stateList,citiesList,handleState, navigatorFunction,latitude,longitude,userLocationFound,errorOccurred };
+    
+    return { countries, handleCountry, stateList,citiesList,handleState, navigatorFunction,latitude,longitude,errorOccurred };
 }
  
 export default useLocationDropDownList;

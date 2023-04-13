@@ -1,23 +1,23 @@
-const Navbar = ({subMenuToggle,showSubMenu}) => {
+const HomeNavbar = ({subMenuToggle,showSubMenu}) => {
     return ( 
         <>
-
-            {!showSubMenu && <div className="navbar bg-gray-200 w-full h-fit flex px-4 py-3 relative">
+            
+            {!showSubMenu && <div className="navbar z-20 absolute top-5 left-5 w-[97%] sm:w-[95%] flex">
                 
                 <div className="company-name">
-                    <h1 className="text-black font-extrabold text-3xl ">BLUE W</h1>
+                    <h1 className="text-white font-extrabold text-3xl ">BLUE W</h1>
                 </div>
                 
-                <div className="navItems absolute right-5 top-5 ">
-                    <ul className="flex text-black gap-9 font-semibold font-['Poppins']">
+                <div className="navItemsHome">
+                    <ul className="flex text-white gap-9">
                         <li><a href="#" className="navItem">About Us</a></li>
                         <li><a href="#" className="navItem">Our Partners</a></li>
                         <li><a href="#" className="navItem">Locations</a></li>
                     </ul>
                 </div>    
             </div>}
-            {!showSubMenu && <div className="hamMenu" onClick={() =>subMenuToggle()}>
-                <i className="fa-solid fa-bars fa-2x text-black"></i>
+            {!showSubMenu && <div className="hamMenuHome" onClick={subMenuToggle}>
+                <i className="fa-solid fa-bars fa-2x text-white"></i>
             </div>}
             {showSubMenu && <div className="subMenu flex">
                 
@@ -25,7 +25,7 @@ const Navbar = ({subMenuToggle,showSubMenu}) => {
                     <h1 className="text-white font-extrabold text-3xl ">BLUE W</h1>
                 </div> 
 
-                <div className="closeIcon absolute right-3 top-4" onClick={() =>subMenuToggle()}>
+                <div className="closeIcon absolute right-3 top-4" onClick={subMenuToggle}>
                     <i className="fa-sharp fa-solid fa-xmark fa-3x"></i>
                 </div>
 
@@ -39,4 +39,4 @@ const Navbar = ({subMenuToggle,showSubMenu}) => {
      );
 }
  
-export default Navbar;
+export default HomeNavbar;
