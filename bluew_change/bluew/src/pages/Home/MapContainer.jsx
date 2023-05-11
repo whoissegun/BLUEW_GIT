@@ -113,8 +113,6 @@ const MapContainer = () => {
             
                 <GoogleMap zoom={17} center={center} mapContainerClassName=" w-[70vw] sm:w-[100vw] md:w-[100vw] h-[100vh] lg:w-[100vw]" options={options} onLoad={onLoad}>
 
-
-                    {/* TODO: FIX MARKER NOT APPEARING */}
                      { selected && 
                      <>
                         <Marker position={center}/>

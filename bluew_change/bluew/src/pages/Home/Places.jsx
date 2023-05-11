@@ -16,8 +16,10 @@ const Places = ({setOffice}) => {
       
           if (results && results.length > 0) {
             const { lat, lng } = await getLatLng(results[0]);
+            
       
             if (lat && lng) {
+              console.log(lat,lng);
               setOffice({ lat, lng });
             } else {
               console.error("Error: Unable to get latitude and longitude.");

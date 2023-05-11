@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react'
 import './App.css'
 import Navbar from './Navbar'
 import ProposalForm from './pages/GenerateProposal/ProposalForm';
-import { BrowserRouter as Router, Routes,Route, useLocation  } from 'react-router-dom';
+import { BrowserRouter as Router, Routes,Route,useLocation} from 'react-router-dom';
 import HomePage from './pages/Home/HomePage';
 function App() {
   const [showSubMenu, setShowSubMenu] = useState(false);
